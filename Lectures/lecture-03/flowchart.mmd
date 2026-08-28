@@ -1,0 +1,6 @@
+
+flowchart TD
+    A[start] -->|inputs| B(x,ans)
+    B --> C{ans*ans < x}
+    C -->|Yes| D[ans = ans + 1] -->C
+    C -->|No| E[ans]
