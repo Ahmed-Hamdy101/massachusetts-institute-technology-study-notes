@@ -112,3 +112,14 @@ while iterations > 0:
     iterations = iterations - 1
 # if while is done go excute instruction 2
 print(y)
+
+x = 20 
+iteration = 1
+if(iteration<x):
+    if x%iteration == 0:
+        print('x is even')
+
+    else:
+        print('x is odd')
+    iteration = iteration + 1
+    
