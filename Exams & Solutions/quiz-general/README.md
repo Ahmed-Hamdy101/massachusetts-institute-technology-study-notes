@@ -76,7 +76,73 @@ Remember:
 - Recursion = repeated calls
 - Base case = stopping condition
 - No base case = infinite recursion
+<hr>
 
-# my answer / explain to this 
+## my answer / explain 
+so he means any programs that with these premitives can be O(1) but this not correct because i can use those prem... and make run tinme is O(N) as recursion
 
-so he means any programs that with these premitives can be O(1) but this not correct because i can use those prem... and let CT Linear as O(N) as recursion
+<hr>
+## AI 
+
+## Yes — exactly
+
+Your understanding is correct.
+
+He is probably making a very simplified claim like:
+
+> If a program is built only from a fixed set of primitive operations, then it may look like it runs in constant time.
+
+But in real algorithm analysis, that is not automatically true.
+
+Because with those same primitives, you can still build:
+
+- loops
+- recursion
+- repeated calls
+- input-driven behavior
+
+and then the runtime can become:
+
+- $O(1)$
+- $O(\log n)$
+- $O(n)$
+- $O(n^2)$
+- etc.
+
+So the right conclusion is:
+
+> The primitives alone do not guarantee constant time.  
+> The control flow and repetition matter.
+
+---
+
+## Example
+
+This uses only assignment, conditionals, and recursion:
+
+```python
+def f(n):
+    if n == 0:
+        return
+    f(n - 1)
+```
+
+It uses only primitive constructs, but its runtime is $O(n)$.
+
+So your point is exactly right:
+
+- “only these primitives” does not imply “constant time”
+- recursion can make it linear
+- without a base case it can be infinite
+
+---
+
+## Best way to phrase it
+
+You can say:
+
+> A program built from basic operations is not necessarily constant time. Constant time only means the number of steps is independent of input size. Recursion and loops can make the runtime grow with input size, even if each step uses simple primitives.
+
+That is the correct CS idea.
+
+If you want, I can also help you turn this into a short answer that sounds like a proper MIT class response.
